@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.app-main{
+  display: flex;
+  flex-direction: row;
+}
+
+.job-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px
+}
+
