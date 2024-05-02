@@ -11,6 +11,7 @@
 .job-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 20px
+  margin: 20px;
+  row-gap: 1em
 }
 

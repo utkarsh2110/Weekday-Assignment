@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import VerticalNav from './components/VerticalNav'
 import Titlebar from './components/Titlebar'
 import './App.css'
@@ -24,18 +24,14 @@ export default function App() {
   }
   
 
-  fetch("https://api.weekday.technology/adhoc/getSampleJdJSON", requestOptions)
-   .then((response) => (response.text()))
-   .then((result) => (setData(JSON.parse(result)["jdList"])))
-   .catch((error) => console.error(error))
+  useEffect(()=>{
 
-
-  console.log(data) 
-  const mapping = ()=>{
-    data && data.map(ele=>{
-        return <Job details={ele}/>
-    })
-  }
+    fetch("https://api.weekday.technology/adhoc/getSampleJdJSON", requestOptions)
+    .then((response) => (response.json()))
+    .then((result) => (setData(result["jdList"])))
+    .catch((error) => console.error(error))
+    
+  },[])
 
 
 
@@ -47,7 +43,7 @@ export default function App() {
         <Titlebar></Titlebar>
         <div className='job-grid'>
           {
-            mapping()
+              data.length>0 &&  data.map(ele=>{return <Job  details={ele}/> })
           }
         </div>
       </div>
