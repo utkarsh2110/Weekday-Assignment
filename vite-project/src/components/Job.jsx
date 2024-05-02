@@ -1,7 +1,6 @@
 import logo from '../assets/workday_logo.png'
 import '../styles/job.css'
-export default function Job() {
-
+export default function Job({details}) {
     return (
 
         <div className='job-card'>
@@ -18,23 +17,23 @@ export default function Job() {
                 </div>
                 <div className='basic-details'>
                     <h1 className='company-name'>Trumio</h1>
-                    <h2 className='role'>Product Manager</h2>
-                    <h3 className='location'>India</h3>
+                    <h2 className='role'>{details.jobRole}</h2>
+                    <h3 className='location'>{etails.location}</h3>
                 </div>
             </div>
-            <h1 className='salary'>Estimated Salary: ₹15 - 25 LPA &#9989;</h1>
+            <h1 className='salary'>Estimated Salary: {details.salaryCurrencyCode && "₹"}{details.minJdSalary}  {details.maxJdSalary && "- "+ details.maxJdSalary }  &#9989;</h1>
             <h1 className='static-h1'>About Company:</h1>
             <h2 className='about-us'>About us</h2>
-            <p className='company-details'>Trumio is the world's first University Projects Ecosystem platform enabling global clients to harness students, professors, and institutional capabilities to speed priority project execution for their business. Next-generation talent organized as teams with diverse skills, find and deliver impactful outcomes working within a secure project environment on Trumio. With AI- assistance built into each process step - Trumio makes it easy for clients and teams to stay on track, collaborate, and achieve desired project</p>
+            <p className='company-details'>{details.jobDetailsFromCompany.slice(444)}</p>
 
             <div style={{position:"relative"}} >
                  <div className="viewMore"></div>
-                 <p style={{color: "#4943DA", textAlign:"center", zIndex:1000, opacity: 1, marginTop:10}}>Show More</p>
+                 <p style={{color: "#4943DA", textAlign:"center", zIndex:1000, opacity: 1, marginTop:10, cursor:"pointer"}}>Show More</p>
             </div>
 
             <h1 className='exp'>Minimum Experience </h1>
-            <h1 className='exp-txt'>1 years </h1>
-            <button className='btn'><div style={{fontSize: "15px", marginRight: "5px",display:"inline"}}>&#9889;</div>Easy Apply</button>
+            <h1 className='exp-txt'>{details.minExp && detail.minExp + " years"}  </h1>
+            <button className='btn'style={{cursor:"pointer"}}><div style={{fontSize: "15px", marginRight: "5px",display:"inline"}}>&#9889;</div>Easy Apply</button>
 
         </div>
 
