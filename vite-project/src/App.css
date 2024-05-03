@@ -26,12 +26,11 @@
 }
 
 .job-grid{
-  margin-top: 80px;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 6em;
   row-gap: 2em;
-  margin: 80px 150px auto;
+  margin: 60px 150px auto;
 }
 
 
@@ -51,10 +50,11 @@
 
 @media (max-width: 850px){
   .job-grid{
-    width: 100%;
+ 
     display:grid;
     grid-template-columns: repeat(2, fr);
     margin: 100px 3em auto;
+    column-gap: 2em;
   }
 
   .tbar, .tbar>div{
@@ -73,5 +73,14 @@
     left: 0;
     background-color: white;
     z-index: 1;
+  }
+}
+@media (max-width: 800px){
+  .job-grid{
+    width: 80%;
+    display:grid;
+    grid-template-columns: 1fr;
+    margin: 100px 3em auto;
+    grid-template-rows: auto;
   }
 }

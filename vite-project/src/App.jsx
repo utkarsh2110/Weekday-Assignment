@@ -3,6 +3,7 @@ import VerticalNav from './components/VerticalNav'
 import Titlebar from './components/Titlebar'
 import './App.css'
 import Job from './components/Job'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function App() {
 
@@ -39,12 +40,16 @@ export default function App() {
 
     <div className='app-main'>
       <div className="verticalNav"><VerticalNav /></div>
+
       <div className="main">
-        <div className="tbar"><Titlebar/></div>
+        <div className="tbar"><Titlebar /></div>
+        <div className='filters'>
+          <span><input type="text" placeholder='Experience'/></span>
+          <span><KeyboardArrowDownIcon /></span>
+        </div>
         <div className='job-grid'>
-          
           {
-            data.length > 0 && data.map(ele => { return <Job  details={ele} /> })
+            data.length > 0 && data.map(ele => { return <Job details={ele} /> })
           }
         </div>
       </div>

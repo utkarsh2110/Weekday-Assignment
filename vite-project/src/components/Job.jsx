@@ -32,8 +32,8 @@ export default function Job({details}) {
 
             <h1 className='exp'>Minimum Experience </h1>
             <h1 className='exp-txt'>{minExp && minExp + " years" || "Unknown"}  </h1>
-            <button className='btn'style={{cursor:"pointer"}}><div style={{fontSize: "15px", marginRight: "5px",display:"inline"}}>&#9889;</div>Easy Apply</button>
-
+            <button className='btn btn1'style={{cursor:"pointer"}}><div style={{fontSize: "15px", marginRight: "5px",display:"inline", marginBottom: "20px"}}>&#9889;</div>Easy Apply</button>
+            <button className='btn btn2'style={{cursor:"pointer"}}>Unlock Referral Asks</button>
         </div>
 
 

@@ -1,14 +1,12 @@
 
 .job-card{
-    width: 100%;
     border: 1px solid #e2e2e2;
     max-height: fit-content;
     border-radius: 16px;
     padding: 10px 20px;
     box-shadow: 2px 2px 3px #e2e2e2;
     position: relative;
-    max-width: 300px;
-  
+    width: 300px;
 }
 
 .job-card>div{
@@ -85,6 +83,15 @@
     margin-bottom: 20px;
 }
 
+.btn1{
+    margin-bottom: 10px;
+}
+
+.btn2{
+    background-color: #4943DA;
+    color: white;
+    font-weight: 200;
+}
 .viewMore{
 
     height: 70px;
@@ -105,4 +112,12 @@
     .job-card{
       width: 300px
     }
+}
+
+@media (max-width:800px){
+    .job-card{
+      width: 80%;
+      margin: auto;
+    }
+    
 }
