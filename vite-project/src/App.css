@@ -9,46 +9,52 @@
 }
 
 .main{
-  min-width: calc(100vw - 100px);
+  min-width: calc(100vw - 150px);
 }
 .tbar{
+  overflow: hidden;
+  position: fixed;
   width: 100%;
+  top: 0;
+  left: 104px;
+  background-color: white;
+  z-index: 1;
 }
-
+.verticalNav{
+  overflow: hidden;
+  position: fixed;
+}
 
 .job-grid{
+  margin-top: 80px;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-  margin: 2em auto;
+  column-gap: 6em;
+  row-gap: 2em;
+  margin: 80px 150px auto;
 }
 
 
-@media (max-width: 1300px){
+@media (max-width: 1000px){
   .job-grid{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 2em auto ;
     gap: 2em;
+    column-gap: 2em;
+    margin: 80px 120px auto;
   }
   
 }
 
-@media (max-width: 800px){
-  .job-grid{
-    display:grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin: 2em auto ;
-    gap: 1em;
-  }
   
-}
 
-@media (max-width: 474px){
+
+@media (max-width: 850px){
   .job-grid{
+    width: 100%;
     display:grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin: 2em auto ;
+    grid-template-columns: repeat(2, fr);
+    margin: 100px 3em auto;
   }
 
   .tbar, .tbar>div{
@@ -57,5 +63,15 @@
   
   .verticalNav{
     display: none;
+  }
+
+  .tbar{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1;
   }
 }

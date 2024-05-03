@@ -1,8 +1,6 @@
 import "../styles/titlebar.css"
 export default function Titlebar() {
 
-    const viewLeftT
-
     return (
         <div style={{
             height:"60px",
@@ -14,7 +12,7 @@ export default function Titlebar() {
             borderRadius: "0 0 5px 5px",
             paddingLeft: "20px"
         }}>
-            <div className="burger-btn"onClick={}>
+            <div className="burger-btn">
                 <div className="bars bar1"></div>
                 <div className="bars bar2"></div>
                 <div className="bars bar3"></div>

@@ -1,13 +1,14 @@
 
 .job-card{
-    width: 80%;
+    width: 100%;
     border: 1px solid #e2e2e2;
-    height: fit-content;
+    max-height: fit-content;
     border-radius: 16px;
     padding: 10px 20px;
     box-shadow: 2px 2px 3px #e2e2e2;
     position: relative;
-    margin-left: 1em;
+    max-width: 300px;
+  
 }
 
 .job-card>div{
@@ -97,4 +98,11 @@
 
 .btn{
     padding: 10px;
+}
+
+
+@media (max-width:1000px){
+    .job-card{
+      width: 300px
+    }
 }
