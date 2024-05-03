@@ -1,12 +1,13 @@
 
 .job-card{
-    width: 300px;
+    width: 80%;
     border: 1px solid #e2e2e2;
-    height: 580px;
+    height: fit-content;
     border-radius: 16px;
-    padding: 10px 020px;
+    padding: 10px 20px;
     box-shadow: 2px 2px 3px #e2e2e2;
     position: relative;
+    margin-left: 1em;
 }
 
 .job-card>div{
