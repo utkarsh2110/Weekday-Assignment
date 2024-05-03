@@ -3,13 +3,11 @@
   padding: 0;
 }
 
-.app-main{
-  display: flex;
-  flex-direction: row;
-}
-
 .main{
   min-width: calc(100vw - 150px);
+  display: flex;
+  flex-direction: column;
+  gap:1em;
 }
 .tbar{
   overflow: hidden;
@@ -19,6 +17,9 @@
   left: 104px;
   background-color: white;
   z-index: 1;
+}
+.filters{
+  display: flex;
 }
 .verticalNav{
   overflow: hidden;
@@ -83,4 +84,9 @@
     margin: 100px 3em auto;
     grid-template-rows: auto;
   }
+}
+
+
+.experience{
+  width: 60px;
 }

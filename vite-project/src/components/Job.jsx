@@ -3,6 +3,8 @@ import '../styles/job.css'
 export default function Job({details}) {
 
     const {jobRole, location, salaryCurrencyCode, minJdSalary, maxJdSalary, jobDetailsFromCompany, minExp, companyName} = details; //desrtructed the details object
+
+    if(details.jobRole){ // to check whether there is data or not in the details object
     return (
         <div className='job-card'>
             <div className="date-posted">
@@ -23,7 +25,8 @@ export default function Job({details}) {
             <h1 className='salary'>Estimated Salary: {(salaryCurrencyCode + " ")|| "₹ "}{minJdSalary}  {maxJdSalary && "- "+ maxJdSalary }  &#9989;</h1>
             <h1 className='static-h1'>About Company:</h1>
             <h2 className='about-us'>About us</h2>
-            <p className='company-details'>{jobDetailsFromCompany && jobDetailsFromCompany.substring(0,444)}</p>
+            <p className='company-details'>{jobDetailsFromCompany && jobDetailsFromCompany.substring(0,444)}</p> 
+            {/* calculated and found that website used 444 characters, so that's why substring(0,444) */}
 
             <div style={{position:"relative"}} >
                  <div className="viewMore"></div>
@@ -39,4 +42,5 @@ export default function Job({details}) {
 
 
     )
+}
 }
