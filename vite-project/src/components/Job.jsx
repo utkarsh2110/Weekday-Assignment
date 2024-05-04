@@ -17,7 +17,6 @@ export default function Job({details}) {
 
             <div className="job-heading">
                 <div className="img"> 
-                    {/* company logo goes here */}
                     <img src={logoUrl} alt="logo" width={"30px"} /> 
                 </div>
                 <div className='basic-details'>

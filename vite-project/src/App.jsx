@@ -62,7 +62,11 @@ export default function App() {
   const [companyName, setCompanyName] = useState('');
 
   const [openlocation, setOpenLocation] = useState("none");
-  const [location, setlocation] = useState(null);
+  const [location, setlocation] = useState("");
+
+  const [openNoOfEmployees, setOpenNoOfEmployees] = useState("none");
+  const [NoOfEmployees, setNoOfEmployees] = useState(null);
+
 
   return (
 
@@ -75,6 +79,10 @@ export default function App() {
 
         {/* Filters */}
         <div className='filters'>
+
+
+
+          
           <div className="filterBox exp-filter-box" style={{ position: "relative" }}>
             <div className="experience" >
               <span id='span-1'><input type="text" placeholder='Experience' className='exp-filter-box' value={exp} />
@@ -97,11 +105,35 @@ export default function App() {
           </div>
 
 
+        
+          <div className="filterBox minSalary-filterBox" style={{ position: "relative" }}>
+            <div className="minSalary" >
+              <span id='span-1'><input type="text" placeholder='Number Of Employees' className='minSalary-filterBox' value={NoOfEmployees} />
+              </span>
+              <span id='span-2' onClick={() => {setOpenNoOfEmployees(prev => prev == "block" ? "none" : "block") }}>
+                {openNoOfEmployees == "none" ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
+            </div>
+
+            <div className="dropdown-data" style={{ display: openNoOfEmployees, position: "absolute", top: "2.7rem" }} onClick={(e) => {setNoOfEmployees(e.target.innerText), setOpenNoOfEmployees("none") }}>
+              <div>1-10</div>
+              <div>11-20</div> 
+              <div>21-50</div>
+              <div>51-100</div>
+              <div>101-200</div>
+              <div>201-500</div>
+              <div>500+</div>
+            </div>
+            </div>
+
+
+
+
+
           <div className="filterBox minSalary-filterBox" style={{ position: "relative" }}>
             <div className="minSalary" >
               <span id='span-1'><input type="text" placeholder='Min Base Salary' className='minSalary-filterBox' value={minSalary} />
               </span>
-              <span id='span-2' onCick={() => {setOpenMinSalary(prev => prev == "block" ? "none" : "block") }}>
+              <span id='span-2' onClick={() => {setOpenMinSalary(prev => prev == "block" ? "none" : "block") }}>
                 {openSalary == "none" ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
             </div>
 
@@ -118,13 +150,13 @@ export default function App() {
           </div>
           <div className="filterBox minSalary-filterBox" style={{ position: "relative" }}>
             <div className="minSalary" >
-              <span id='span-1'><input type="text" placeholder='Remote' className='minSalary-filterBox' value={location} />
+              <span id='span-1'><input type="text" placeholder='Remote' className='minSalary-filterBox' value={location}/>
               </span>
               <span id='span-2' onClick={() => {setOpenLocation(prev => prev == "block" ? "none" : "block") }}>
                 {openlocation == "none" ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}</span>
             </div>
 
-            <div className="dropdown-data" style={{ display: openlocation, position: "absolute", top: "2.7rem" }} onClick={(e) => {setlocation(e.target.innerText.toLowerCase().toString()), setOpenLocation("none") }}>
+            <div className="dropdown-data" style={{ display: openlocation, position: "absolute", top: "2.7rem" }} onClick={(e) => {setlocation(e.target.innerText.toLowerCase()), setOpenLocation("none") }}>
               <div>Remote</div>
               <div>Hybrid</div> 
               <div>In-office</div>
@@ -135,13 +167,7 @@ export default function App() {
           <div className="filterBox company-filter" >
             <span className='span'><input type="text" placeholder='Search Company Name' className='exp-filter-box' onChange={(e)=>setCompanyName(e.target.value.toLowerCase())} /></span> 
           </div>
-
-
-
         </div>
-
-
-
 
 
         <div className='job-grid'>
@@ -153,7 +179,7 @@ export default function App() {
             return     (ele.minExp <= (10 && (exp || 10))  && ele.maxExp >= exp)
                     && (ele.companyName.toLowerCase().includes(companyName))
                     && (ele.minJdSalary >= salary) 
-                    && (ele.location.toLowerCase() == location || true || console.log(ele.location.toLowerCase() == location))     
+                    && (ele.location.toLowerCase() === location || true)     
                       
           
           })

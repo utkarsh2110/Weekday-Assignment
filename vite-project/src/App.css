@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 *{
   margin: 0;
   padding: 0;
+  user-select: none;
+  font-family: 'Lexend';
 }
 
 .main{
@@ -88,9 +91,10 @@
 
 .filters{
   
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   justify-content: flex-start;
-  margin-left: calc(160px);
+  margin-left: calc(140px);
   margin-top: calc(80px + 2em);
   gap: 3em;
   flex-direction: row;

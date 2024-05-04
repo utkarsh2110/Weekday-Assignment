@@ -62,19 +62,19 @@
 }
 .about-us{
     font-size:14px;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .company-details{
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.01cm;
 }
 .exp{
     font-size: 15px;
     color: grey;
     letter-spacing: 0.05cm;
-    font-weight: 500;
+    font-weight: 300;
 }
 .exp-txt{
     font-size: 14px;
@@ -85,6 +85,7 @@
 
 .btn1{
     margin-bottom: 10px;
+    font-family: 200;
 }
 
 .btn2{
@@ -106,6 +107,7 @@
 .btn{
     padding: 10px;
 }
+
 
 
 @media (max-width:1000px){
