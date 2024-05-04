@@ -13,8 +13,9 @@ export default function Job({details}) {
             </div>
 
             <div className="job-heading">
-                <div className="img">
-                    <img src={logo} alt="logo" width={"30px"} />
+                <div className="img"> 
+                    {/* company logo goes here */}
+                    <img src={logo} alt="logo" width={"30px"} /> 
                 </div>
                 <div className='basic-details'>
                     <h1 className='company-name'>{ companyName || "Trumio"}</h1>
@@ -38,9 +39,6 @@ export default function Job({details}) {
             <button className='btn btn1'style={{cursor:"pointer"}}><div style={{fontSize: "15px", marginRight: "5px",display:"inline", marginBottom: "20px"}}>&#9889;</div>Easy Apply</button>
             <button className='btn btn2'style={{cursor:"pointer"}}>Unlock Referral Asks</button>
         </div>
-
-
-
     )
 }
 }

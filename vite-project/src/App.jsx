@@ -7,10 +7,11 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function App() {
 
+
+
+
   const [data, setData] = useState([{}])
   const [isLoading, setIsLoading] = useState(false);
-  const [page, setPage] = useState(1);
-
 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -31,8 +32,7 @@ export default function App() {
     setIsLoading(true)
     fetch("https://api.weekday.technology/adhoc/getSampleJdJSON", requestOptions)
     .then((response) => (response.json()))
-    .then((result) => (setData(prev=> [...prev, ...result["jdList"]]), setPage(prevPage => prevPage + 1)))
-    .catch((error) => console.error(error))
+    .then((result) => (setData(prev=> [...prev, ...result["jdList"]])))
     setIsLoading(false)
   }
 

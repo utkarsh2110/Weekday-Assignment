@@ -18,7 +18,9 @@ export default function Titlebar() {
                 <div className="bars bar3"></div>
             </div>
             
-            <div style={{fontSize:"25px"}}>&#128075;</div>
+            {/* High Emoji */}
+            <div style={{fontSize:"25px"}}>&#128075;</div> 
+            
             <div className="h1"><h1 style={{fontSize: "20px", marginLeft: "10px", fontFamily: "Helvetica", }}>Utkarsh</h1></div>
         </div>
 
