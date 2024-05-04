@@ -18,9 +18,7 @@
   background-color: white;
   z-index: 1;
 }
-.filters{
-  display: flex;
-}
+
 .verticalNav{
   overflow: hidden;
   position: fixed;
@@ -31,8 +29,77 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 6em;
   row-gap: 2em;
-  margin: 60px 150px auto;
+  margin: 20px 150px 20px;
 }
+
+
+
+
+.experience,.company-filter, .minSalary{
+  display: flex;
+  width: fit-content;
+}
+.experience span, .span, .minSalary span{
+  border: 2px solid #e2e2e2;
+  border-radius: 5px;
+  
+}
+.span{
+  width: 15em;
+}
+#span-1{
+  border-right: 0px;
+  border-radius: 5px 0px 0px 5px ;
+}
+#span-2{
+  border-left: none;
+  border-radius: 0px 5px 5px 0px ;
+  padding-top: 5px;
+}
+.exp-filter-box, .company-filter, .minSalary-filterBox{
+  max-width:  fit-content;
+  width: 9rem;
+  padding: 9px;
+  border: none;
+  outline: none;
+}
+
+
+.dropdown-data{
+  margin-top: 5px;
+  border: 1.5px solid #e2e2e2;
+  box-shadow: 1px 1px 4px rgb(199, 199, 199);
+  border-radius: 5px;
+  width: 11.6rem;
+  height:fit-content;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+  background-color: white
+}
+.dropdown-data div{
+  width: 100%;
+  padding: 5px 0px;
+  padding-left: 9px;
+}
+.dropdown-data div:hover{
+  background-color: #DEEBFF;
+}
+
+.filters{
+  
+  display: flex;
+  justify-content: flex-start;
+  margin-left: calc(160px);
+  margin-top: calc(80px + 2em);
+  gap: 3em;
+  flex-direction: row;
+}
+
+
+
+
+
 
 
 @media (max-width: 1000px){
@@ -43,6 +110,11 @@
     column-gap: 2em;
     margin: 80px 120px auto;
   }
+
+  .filters{
+    margin-left: calc(160px);
+    margin-top: calc(80px + 2em);
+  }
   
 }
 
@@ -51,10 +123,9 @@
 
 @media (max-width: 850px){
   .job-grid{
- 
     display:grid;
     grid-template-columns: repeat(2, fr);
-    margin: 100px 3em auto;
+    margin: 0px 3em auto;
     column-gap: 2em;
   }
 
@@ -75,18 +146,23 @@
     background-color: white;
     z-index: 1;
   }
+
+  .filters{
+    margin-left: 0;
+    margin-top: 0em;
+  }
 }
 @media (max-width: 800px){
   .job-grid{
     width: 80%;
     display:grid;
     grid-template-columns: 1fr;
-    margin: 100px 3em auto;
+    margin: 0px 3em auto;
     grid-template-rows: auto;
   }
-}
-
-
-.experience{
-  width: 60px;
+  .filters{
+    width: 80%;
+    margin-top: calc(80px + 2em);
+    margin-left: 3.5em;
+  }
 }

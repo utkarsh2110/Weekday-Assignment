@@ -2,7 +2,7 @@ import logo from '../assets/workday_logo.png'
 import '../styles/job.css'
 export default function Job({details}) {
 
-    const {jobRole, location, salaryCurrencyCode, minJdSalary, maxJdSalary, jobDetailsFromCompany, minExp, companyName} = details; //destructred the details object
+    const {jobRole, location, salaryCurrencyCode, minJdSalary, maxJdSalary, jobDetailsFromCompany, minExp, companyName, logoUrl} = details; //destructred the details object
 
     const suffixPay = salaryCurrencyCode=="INR"?"LPA": "K"; // determines the suffix of the currency LPA for INR and K for others.
     const currencySymbol = salaryCurrencyCode=="USD"?"$": "₹";
@@ -18,7 +18,7 @@ export default function Job({details}) {
             <div className="job-heading">
                 <div className="img"> 
                     {/* company logo goes here */}
-                    <img src={logo} alt="logo" width={"30px"} /> 
+                    <img src={logoUrl} alt="logo" width={"30px"} /> 
                 </div>
                 <div className='basic-details'>
                     <h1 className='company-name'>{ companyName || "Weekday"}</h1>
@@ -39,7 +39,7 @@ export default function Job({details}) {
 
             <h1 className='exp'>Minimum Experience </h1>
             <h1 className='exp-txt'>{minExp && minExp + " years" || "Unknown"}  </h1>
-            <button className='btn btn1'style={{cursor:"pointer"}}><div style={{fontSize: "15px", marginRight: "5px",display:"inline", marginBottom: "20px"}}>&#9889;</div>Easy Apply</button>
+            <button className='btn btn1'style={{cursor:"pointer"}} onClick={()=>window.location.href=details.jdLink}><div style={{fontSize: "15px", marginRight: "5px",display:"inline", marginBottom: "20px"}}>&#9889;</div>Easy Apply</button>
             <button className='btn btn2'style={{cursor:"pointer"}}>Unlock Referral Asks</button>
         </div>
     )

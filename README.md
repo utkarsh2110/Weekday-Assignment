@@ -3,7 +3,7 @@
 
 This website is developed as per the assignment of Weekday.
 
-How to use this webiste:
+How to use this website:
 ## Installation
 
 Install with npm.
