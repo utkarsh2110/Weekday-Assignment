@@ -6,6 +6,11 @@ This website is developed as per the assignment of Weekday.
 How to use this website:
 ## Installation
 
+Write the following on your terminal:
+Clone the repository:
+```bash
+git clone repo url
+```
 Install with npm.
 It is just a three step process:
 
@@ -14,6 +19,7 @@ It is just a three step process:
   npm install or npm i
   npm run dev
 ```
+
 
 ## Authors
 
