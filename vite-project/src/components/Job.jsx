@@ -2,8 +2,11 @@ import logo from '../assets/workday_logo.png'
 import '../styles/job.css'
 export default function Job({details}) {
 
-    const {jobRole, location, salaryCurrencyCode, minJdSalary, maxJdSalary, jobDetailsFromCompany, minExp, companyName} = details; //desrtructed the details object
+    const {jobRole, location, salaryCurrencyCode, minJdSalary, maxJdSalary, jobDetailsFromCompany, minExp, companyName} = details; //destructred the details object
 
+    const suffixPay = salaryCurrencyCode=="INR"?"LPA": "K"; // determines the suffix of the currency LPA for INR and K for others.
+    const currencySymbol = salaryCurrencyCode=="USD"?"$": "₹";
+    
     if(details.jobRole){ // to check whether there is data or not in the details object
     return (
         <div className='job-card'>
@@ -18,12 +21,12 @@ export default function Job({details}) {
                     <img src={logo} alt="logo" width={"30px"} /> 
                 </div>
                 <div className='basic-details'>
-                    <h1 className='company-name'>{ companyName || "Trumio"}</h1>
+                    <h1 className='company-name'>{ companyName || "Weekday"}</h1>
                     <h2 className='role'>{jobRole}</h2>
                     <h3 className='location'>{location}</h3>
                 </div>
             </div>
-            <h1 className='salary'>Estimated Salary: {(salaryCurrencyCode + " ")|| "₹ "}{minJdSalary}  {maxJdSalary && "- "+ maxJdSalary }  &#9989;</h1>
+            <h1 className='salary'>Estimated Salary: {minJdSalary && currencySymbol + minJdSalary+ suffixPay + " -" || "<="}  {maxJdSalary && currencySymbol + maxJdSalary+ suffixPay }  &#9989;</h1>
             <h1 className='static-h1'>About Company:</h1>
             <h2 className='about-us'>About us</h2>
             <p className='company-details'>{jobDetailsFromCompany && jobDetailsFromCompany.substring(0,444)}</p> 

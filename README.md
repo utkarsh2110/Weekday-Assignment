@@ -1,10 +1,9 @@
 
 # Weekday SDE 1 Assignment
 
-How to use this website.
 This website is developed as per the assignment of Weekday.
 
-
+How to use this webiste:
 ## Installation
 
 Install with npm.
